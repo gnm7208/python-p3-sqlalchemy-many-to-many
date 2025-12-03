@@ -34,6 +34,8 @@ class User(Base):
     created_at = Column(DateTime(), server_default=func.now())
     updated_at = Column(DateTime(), onupdate=func.now())
 
+    reviews = relationship('Review', backref=backref('user'))
+
     def __repr__(self):
         return f'User(id={self.id}, ' + \
             f'name={self.name})'
