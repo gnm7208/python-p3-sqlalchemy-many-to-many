@@ -28,6 +28,7 @@ class Game(Base):
     price = Column(Integer())
 
     reviews = relationship('Review', backref=backref('game'))
+    users = relationship('User', secondary=game_user, back_populates='games')
 
     def __repr__(self):
         return f'Game(id={self.id}, ' + \
