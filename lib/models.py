@@ -1,3 +1,6 @@
+# SQLAlchemy Many-to-Many Relationships Implementation
+# This module demonstrates Game-User-Review relationships with association table
+
 from sqlalchemy import create_engine, func
 from sqlalchemy import ForeignKey, Table, Column, Integer, String, DateTime, MetaData
 from sqlalchemy.orm import relationship, backref
