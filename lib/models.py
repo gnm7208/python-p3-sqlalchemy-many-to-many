@@ -26,6 +26,18 @@ class Game(Base):
             f'title={self.title}, ' + \
             f'platform={self.platform})'
 
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer(), primary_key=True)
+    name = Column(String())
+    created_at = Column(DateTime(), server_default=func.now())
+    updated_at = Column(DateTime(), onupdate=func.now())
+
+    def __repr__(self):
+        return f'User(id={self.id}, ' + \
+            f'name={self.name})'
+
 class Review(Base):
     __tablename__ = 'reviews'
 
