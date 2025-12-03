@@ -26,6 +26,8 @@ class Game(Base):
     genre = Column(String())
     platform = Column(String())
     price = Column(Integer())
+    created_at = Column(DateTime(), server_default=func.now())
+    updated_at = Column(DateTime(), onupdate=func.now())
 
     reviews = relationship('Review', backref=backref('game'))
     users = relationship('User', secondary=game_user, back_populates='games')
