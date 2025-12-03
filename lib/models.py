@@ -58,6 +58,8 @@ class Review(Base):
     id = Column(Integer(), primary_key=True)
     score = Column(Integer())
     comment = Column(String())
+    created_at = Column(DateTime(), server_default=func.now())
+    updated_at = Column(DateTime(), onupdate=func.now())
     
     game_id = Column(Integer(), ForeignKey('games.id'))
     user_id = Column(Integer(), ForeignKey('users.id'))
