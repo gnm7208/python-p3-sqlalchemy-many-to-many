@@ -67,4 +67,5 @@ class Review(Base):
     def __repr__(self):
         return f'Review(id={self.id}, ' + \
             f'score={self.score}, ' + \
-            f'game_id={self.game_id})'
+            f'game_id={self.game_id}, ' + \
+            f'user_id={self.user_id})'
