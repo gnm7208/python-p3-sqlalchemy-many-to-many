@@ -44,6 +44,7 @@ class User(Base):
     updated_at = Column(DateTime(), onupdate=func.now())
 
     reviews = relationship('Review', backref=backref('user'))
+    games = relationship('Game', secondary=game_user, back_populates='users')
 
     def __repr__(self):
         return f'User(id={self.id}, ' + \
